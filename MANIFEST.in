@@ -1,0 +1,6 @@
+include README.md
+include src/libambe_wrapper.c
+
+# ベンダーコードの取り込み (ソースとヘッダーのみ)
+recursive-include vendor/mbelib-neo/src *.c *.h
+recursive-include vendor/mbelib-neo/include *.h
