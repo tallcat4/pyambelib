@@ -12,15 +12,6 @@ static const int rY[36] = {0, 2, 0, 2, 0, 2, 0, 2, 0, 3, 0, 3, 1, 3, 1, 3, 1, 3,
 static const int rZ[36] = {5,  3, 4,  2, 3,  1, 2,  0, 1,  13, 0,  12, 22, 11, 21, 10, 20, 9,
                            19, 8, 18, 7, 17, 6, 16, 5, 15, 4,  14, 3,  13, 2,  12, 1,  11, 0};
 
-static const int thumbdv_inverse_map[49] = {
-     0, 18, 36,  1, 19, 37,  2, 20, 38,
-     3, 21, 39,  4, 22, 40,  5, 23, 41,
-     6, 24, 42,  7, 25, 43,  8, 26, 44,
-     9, 27, 45, 10, 28, 46, 11, 29, 47,
-    12, 30, 48, 13, 31, 14, 32, 15, 33,
-    16, 34, 17, 35
-};
-
 static const int thumbdv_map[49] = {
      0, 18, 36,  1, 19, 37,  2, 20, 38,
      3, 21, 39,  4, 22, 40,  5, 23, 41,
@@ -80,7 +71,7 @@ void fec_demod_wrapper(const uint8_t* in_buf_3600, char* out_ambe_d) {
     mbe_eccAmbe3600x2450Data(ambe_fr, temp);
 
     for (int i = 0; i < 49; i++) {
-        out_ambe_d[i] = temp[thumbdv_inverse_map[i]];
+        out_ambe_d[i] = temp[thumbdv_map[i]];
     }
 }
 
